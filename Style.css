@@ -1,0 +1,96 @@
+html{
+    font-family:verdana;
+    background-color:#343E3D;
+  }
+  /* Stili per il banner */
+ 
+  .banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #C6EBBE;
+    border-radius:25px;
+    text-align:center;
+  }
+  
+  /* Stili per il logo */
+  .logo {
+    max-height: 80px;     
+  }
+  
+  /* Stili per i link nel banner */
+  .banner-links a {
+    margin-left: 10px;
+    
+    color:#FFDDD2;
+    
+    
+  }
+  a{
+    background-color:#607466;
+    border-radius:5px;
+    width: 200px;
+  }
+
+  /* Stili per la tabella */
+  .table-container {
+    display: flex;
+    justify-content: center; 
+  
+   
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom:20px;
+    border-radius:10px;
+    overflow: hidden;
+      
+  }
+  
+  td,th {
+    border: 5px solid #FCA311;
+   
+    padding: 10px;
+    text-align: center;
+    background-color:#607466;
+    color:#FFDDD2;
+    
+  }
+  .titolo_prod{
+    font-weight:bold;
+    color:#FFDDD2;
+  }
+  .prod-img{
+    height:180px;
+    width:150px;
+    border-radius:50px;
+  }
+  h2{
+    color:#343E3D;
+  }
+  form{
+    
+    text-align: center;
+    background-color:#607466;
+    width: 400px;
+    height: 180px;
+    margin-top: 40px;
+    border-radius: 25px;
+    color:#FFDDD2;
+    margin: auto;
+  }
+  input{
+    margin-top: 20px;
+    border-radius: 5px;
+    align-self: center;
+    
+  }
+  .sub{
+    margin-bottom: 10px;
+  }
+  body{
+    align-items: center;
+  }

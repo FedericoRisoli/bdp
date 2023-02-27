@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Bonsai Store</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div class="banner">
+    <div class="logo-container">
+      <img class="logo" src="imgsito/logo.png">
+    </div>
+    <div>
+      <h2>Bonsai Store</h2>
+    </div>  
+    <div class="banner-links">
+      <a href="#">Registrati</a>
+      <a href="login.html">Accedi</a>
+    </div>
+  </div>
+  //ricordare action log.php
+    <form name="f" method="POST" action="log.php">
+      <p>
+        <label>Username: </label>
+        <input type="text" name="usr">
+      </p>
+      <p>
+        <label>Password: </label>
+        <input type="password" name="psw">
+      </p>
+      <p>
+        <input class="sub" type="submit" value="submit">
+      </p>
+    </form>
+</body>
+</html>
