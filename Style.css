@@ -14,17 +14,15 @@ html{
     text-align:center;
   }
   
-  /* Stili per il logo */
+
   .logo {
     max-height: 80px;     
   }
   
-  /* Stili per i link nel banner */
-  .banner-links a {
+
+  .banner-links  {
     margin-left: 10px;
-    
     color:#FFDDD2;
-    
     
   }
   a{
@@ -33,11 +31,10 @@ html{
     width: 200px;
   }
 
-  /* Stili per la tabella */
+  
   .table-container {
     display: flex;
     justify-content: center; 
-  
    
   }
   
@@ -50,9 +47,8 @@ html{
       
   }
   
-  td,th {
+  td,th{
     border: 5px solid #FCA311;
-   
     padding: 10px;
     text-align: center;
     background-color:#607466;
@@ -72,7 +68,6 @@ html{
     color:#343E3D;
   }
   form{
-    
     text-align: center;
     background-color:#607466;
     width: 400px;
@@ -94,3 +89,4 @@ html{
   body{
     align-items: center;
   }
+  
