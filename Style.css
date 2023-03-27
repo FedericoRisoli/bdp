@@ -1,9 +1,7 @@
 html{
     font-family:verdana;
     background-color:#343E3D;
-  }
-  /* Stili per il banner */
- 
+  } 
   .banner {
     display: flex;
     justify-content: space-between;
@@ -13,29 +11,30 @@ html{
     border-radius:25px;
     text-align:center;
   }
-  
-
   .logo {
     max-height: 80px;     
   }
-  
-
   .banner-links  {
     margin-left: 10px;
     color:#FFDDD2;
+  }
+  a:link, a:visited {
+      background-color:#607466;
+      border-radius:15px;
+      color: white;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      transition-duration: 0.4s;
+    }
     
+    a:hover, a:active {
+      background-color: #FCA311;
   }
-  a{
-    background-color:#607466;
-    border-radius:5px;
-    width: 200px;
-  }
-
-  
   .table-container {
     display: flex;
     justify-content: center; 
-   
   }
   
   table {
@@ -66,6 +65,8 @@ html{
   }
   h2{
     color:#343E3D;
+    position:relative;
+    left: 50px;
   }
   form{
     text-align: center;
@@ -81,12 +82,35 @@ html{
     margin-top: 20px;
     border-radius: 5px;
     align-self: center;
+    border: none;
     
   }
   .sub{
     margin-bottom: 10px;
+    transition-duration: 0.4s;
+    background-color: #C6EBBE;
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    }
+    
+  .sub:hover {
+    background-color: #FCA311; /* Green */
+    color: white;
   }
+  
   body{
     align-items: center;
+  }
+  .textfield
+  {
+    width: 150px;
+    height: 20px;
+  }
+  .textfield:focus
+  {
+    width: 150px;
+    height: 20px;
+    border: solid;
   }
   
