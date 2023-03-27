@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Bonsai Store</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div class="banner">
+    <div class="logo-container">
+      <img class="logo" src="imgsito/logo.png">
+    </div>
+    <div>
+      <h2>Bonsai Store</h2>
+    </div>  
+    <div class="banner-links">
+      <a class="normalbutton" href="login.html">Accedi</a>
+      
+    </div>
+  </div>
+
+    <form  class ="tform" name="f" method="POST" action="logged.php">
+      <table class="tform">
+        <tr>
+            <td> <label>Nome: </label> <input class="textfield" type="text" name="name"></td>
+            <td> <label>Cognome: </label> <input class="textfield" type="text" name="sname"></td>
+        </tr>
+        <tr>
+            <td> <label>Indirizzo: </label><input class="textfield" type="text" name="addr"></td>
+            <td> <label>Data di nascita: </label> <input class="textfield" type="date" name="brt" value="2005-01-01"></td>
+            
+        </tr>
+        <tr>
+            <td> <label>Username: </label><input class="textfield" type="text" name="usr"></td>
+            <td> <label>Password: </label><input class="textfield" type="password" name="psw"></td>
+        </tr>
+      </table>
+      </p>
+      <p>
+        <input class="sub" type="submit" value="Sign Up">
+      </p>
+    </form>
+</body>
+</html>

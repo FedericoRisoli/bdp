@@ -8,27 +8,24 @@
 <body>
   <div class="banner">
     <div class="logo-container">
-      <img class="logo" src="imgsito/logo.png">
+     <a  href="index.html"> <img class="logo" src="imgsito/logo.png"></a>
     </div>
     <div>
       <h2>Bonsai Store</h2>
     </div>  
     <div class="banner-links">
-      <a href="#">Registrati</a>
-      <a href="login.html">Accedi</a>
-      
+      <a class="normalbutton" href="registrati.html">Registrati</a>
     </div>
   </div>
-  //ricordare action log.php
-    <form name="f" method="POST" action="logged.php">
-      <p>
-        <label>Username: </label>
+    <form class="lform" name="f" method="POST" action="logged.php">
+      
+        <label>Username:</label>
         <input class="textfield" type="text" name="usr">
-      </p>
-      <p>
-        <label>Password: </label>
+     <br>
+   
+        <label>Password:</label>
         <input class="textfield" type="password" name="psw">
-      </p>
+
       <p>
         <input class="sub" type="submit" value="Login">
       </p>

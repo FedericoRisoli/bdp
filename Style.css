@@ -12,12 +12,12 @@ html{
     text-align:center;
   }
   .logo {
-    max-height: 80px;     
+    max-height: 80px;    
   }
   .banner-links  {
     margin-left: 10px;
   }
-  a:link, a:visited {
+  .normalbutton:link, .normalbutton:visited {
       background-color:#607466;
       border-radius:15px;
       color: white;
@@ -28,9 +28,10 @@ html{
       transition-duration: 0.4s;
     }
     
-  a:hover, a:active {
+  .normalbutton:hover, .normalbutton:active {
       background-color: #FCA311;
   }
+  
   .table-container {
     display: flex;
     justify-content: center; 
@@ -64,14 +65,11 @@ html{
   }
   h2{
     color:#343E3D;
-    position:relative;
-    left: 50px;
+    
   }
   form{
     text-align: center;
     background-color:#607466;
-    width: 400px;
-    height: 180px;
     margin-top: 40px;
     border-radius: 25px;
     color:#FFDDD2;
@@ -106,10 +104,13 @@ html{
     width: 150px;
     height: 20px;
   }
-  .textfield:focus
-  {
-    width: 150px;
-    height: 20px;
-    border: solid;
+ 
+  .tform{
+    margin-left: auto;
+    width: 800px;
+  }
+  .lform{
+    width: 400px;
+    margin-top: 20px;
   }
   
