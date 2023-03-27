@@ -4,8 +4,8 @@ if($conn->connect_error)
 {
     die('connessione fallita' .$conn->connect_error);
 }
-$name;
-$sql="SELECT nome FROM utenti WHERE username LIKE 'fede'" ;
+$name= $_POST["usr"];
+$sql="SELECT nome FROM utenti WHERE username LIKE '$nome'" ;
 $result=$conn->query($sql);
 if($result->num_rows>0)
 {

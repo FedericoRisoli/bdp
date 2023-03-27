@@ -16,7 +16,6 @@ html{
   }
   .banner-links  {
     margin-left: 10px;
-    color:#FFDDD2;
   }
   a:link, a:visited {
       background-color:#607466;
@@ -29,7 +28,7 @@ html{
       transition-duration: 0.4s;
     }
     
-    a:hover, a:active {
+  a:hover, a:active {
       background-color: #FCA311;
   }
   .table-container {
