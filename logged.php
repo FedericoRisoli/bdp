@@ -5,22 +5,25 @@ if($conn->connect_error)
     die('connessione fallita' .$conn->connect_error);
 }
 $name= $_POST["usr"];
-$sql="SELECT nome FROM utenti WHERE username LIKE '$nome'" ;
-$result=$conn->query($sql);
-if($result->num_rows>0)
+$sql="SELECT nome FROM utenti WHERE username LIKE '$name'" ;
+$sql2="SELECT nome FROM prodotti" ;
+$sql3="SELECT prezzo FROM prodotti" ;
+$sql4="SELECT nomeimg FROM prodotti" ;
+
+$result=mysqli_query($conn,$sql);
+if(mysqli_num_rows($result)>0)  //questo è 1 modo per vedeer se ci sono righe
 {
     while($row=$result->fetch_assoc())
     {
         $name=$row['nome'];
-    }
-   
+    } 
 }
-$sql2="SELECT nome FROM prodotti" ;
-$result2=$conn->query($sql2);
-$sql3="SELECT prezzo FROM prodotti" ;
-$result3=$conn->query($sql3);
-$sql4="SELECT nomeimg FROM prodotti" ;
-$result4=$conn->query($sql4);
+else{
+  header("location: index.html"); //questo è un redirect
+}
+$result2=mysqli_query($conn,$sql2);//questi eseguono le query
+$result3=mysqli_query($conn,$sql3);
+$result4=mysqli_query($conn,$sql4);
 
 
 ?>
@@ -42,15 +45,12 @@ $result4=$conn->query($sql4);
     <h4> Bentornato  <?php print $name?> </h4> 
     </div>
   </div>
- 
-    
-  
   <div class="table-container">
     <table>
       <tbody>
         <tr>
           <?php 
-          if($result2->num_rows>0)
+          if(mysqli_num_rows($result2)>0)  //questa è la prima riga della tabella che mostra tutti i nomi
           {
               while($row=$result2->fetch_assoc())
               {
@@ -61,8 +61,9 @@ $result4=$conn->query($sql4);
         </tr>
         <tr>
         <?php 
-          if($result4->num_rows>0)
-          {
+          if($result4->num_rows>0) //questo è un modo alternativo per vedere se ci sono righe (scegli tu tanto è uguale)
+          { 
+            //questa è la seconda riga della tabella che mostra tutte le immagini
               while($row=$result4->fetch_assoc())
               {
                   print"<td>"."<img class=\"prod-img\" src='imgsito/".$row['nomeimg']."'>"."</td>";
@@ -73,7 +74,7 @@ $result4=$conn->query($sql4);
         </tr>
         <tr>
           <?php
-        if($result3->num_rows>0)
+        if($result3->num_rows>0) //questa è la terza riga della tabella che mostra tutti i prezzi
           {
               while($row=$result3->fetch_assoc())
               {
