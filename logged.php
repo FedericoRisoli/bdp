@@ -1,31 +1,63 @@
 <?php
 $conn=new mysqli('localhost','root','','bonsaistore');
+
 if($conn->connect_error)
 {
     die('connessione fallita' .$conn->connect_error);
 }
-$name= $_POST["usr"];
-$sql="SELECT nome FROM utenti WHERE username LIKE '$name'" ;
+//REGISTRATION
+$operation=$_POST["chekoperation"];
+if($operation=="reg")
+{
+$n = $_POST["n"];
+$sn= $_POST["sn"];
+$add= $_POST["addr"];
+$date= $_POST["brt"];
+$un= $_POST["un"];
+$pss= $_POST["pw"];
+$sqlregistration="INSERT INTO `utenti`(`id`, `username`, `password`, `nome`, `cognome`, `datanascita`, `indirizzo`, `ruolo`) VALUES ('','$un','$pss','$n','$sn','$date','$add','cli')" ;
+if ($conn->query($sqlregistration) === TRUE) 
+{
+  login($un,$pss,$conn);
+} else {
+  echo "Error inserting record: " . $conn->error;
+}
+
+}
+else if($operation=="login")
+{
+  $name= $_POST["usr"];
+  $psw=$_POST["psw"];
+  login($name,$psw,$conn);
+}
+
 $sql2="SELECT nome FROM prodotti" ;
 $sql3="SELECT prezzo FROM prodotti" ;
 $sql4="SELECT nomeimg FROM prodotti" ;
 
-$result=mysqli_query($conn,$sql);
-if(mysqli_num_rows($result)>0)  //questo è 1 modo per vedeer se ci sono righe
-{
-    while($row=$result->fetch_assoc())
-    {
-        $name=$row['nome'];
-    } 
-}
-else{
-  header("location: index.html"); //questo è un redirect
-}
+
 $result2=mysqli_query($conn,$sql2);//questi eseguono le query
 $result3=mysqli_query($conn,$sql3);
 $result4=mysqli_query($conn,$sql4);
 
-
+function login($u,$p,$conn)
+{
+  $sql="SELECT nome FROM utenti WHERE username LIKE '$u' AND password LIKE '$p'" ;
+  $result=mysqli_query($conn,$sql);
+  if(mysqli_num_rows($result)>0 )  //questo è 1 modo per vedere se ci sono righe
+  {
+      while($row=$result->fetch_assoc())
+      {
+        $name=$row['nome'];
+      } 
+     
+  }
+  else
+  {
+  header("location: index.html"); //questo è un redirect
+  }
+  
+}
 ?>
 <html lang="it">
 <head>
@@ -41,8 +73,8 @@ $result4=mysqli_query($conn,$sql4);
     <div>
       <h2>Bonsai Store</h2>
     </div>  
-    <div class="banner-links">
-    <h4> Bentornato  <?php print $name?> </h4> 
+    <div class="banner-links"> 
+    <h4> Bentornato  <?php print $name //DA FIXARE?> </h4> 
     </div>
   </div>
   <div class="table-container">
