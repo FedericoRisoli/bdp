@@ -1,34 +1,39 @@
 <?php
 $conn=new mysqli('localhost','root','','bonsaistore');
-
+session_start();
 if($conn->connect_error)
 {
     die('connessione fallita' .$conn->connect_error);
 }
 //REGISTRATION
-$operation=$_POST["chekoperation"];
-if($operation=="reg")
-{
-$n = $_POST["n"];
-$sn= $_POST["sn"];
-$add= $_POST["addr"];
-$date= $_POST["brt"];
-$un= $_POST["un"];
-$pss= $_POST["pw"];
-$sqlregistration="INSERT INTO `utenti`(`id`, `username`, `password`, `nome`, `cognome`, `datanascita`, `indirizzo`, `ruolo`) VALUES ('','$un','$pss','$n','$sn','$date','$add','cli')" ;
-if ($conn->query($sqlregistration) === TRUE) 
-{
-  login($un,$pss,$conn);
-} else {
-  echo "Error inserting record: " . $conn->error;
-}
+if(isset($_POST["chekoperation"])) 
+  {
+  $operation=$_POST["chekoperation"];
+  if($operation=="reg")
+    {
+    $n = $_POST["n"];
+    $sn= $_POST["sn"];
+    $add= $_POST["addr"];
+    $date= $_POST["brt"];
+    $un= $_POST["un"];
+    $pss= $_POST["pw"];
+    $sqlregistration="INSERT INTO `utenti`(`id`, `username`, `password`, `nome`, `cognome`, `datanascita`, `indirizzo`, `ruolo`) VALUES ('','$un','$pss','$n','$sn','$date','$add','cli')" ;
+      if ($conn->query($sqlregistration) === TRUE) 
+      {
+        login($un,$pss,$conn);
+      } 
+      else
+      {
+        echo "Error inserting record: " . $conn->error;
+      }
 
-}
-else if($operation=="login")
-{
-  $name= $_POST["usr"];
-  $psw=$_POST["psw"];
-  login($name,$psw,$conn);
+    }
+  else if($operation=="login")
+  {
+    $name= $_POST["usr"];
+    $psw=$_POST["psw"];
+    login($name,$psw,$conn);
+  }
 }
 
 $sql2="SELECT nome FROM prodotti" ;
@@ -48,7 +53,7 @@ function login($u,$p,$conn)
   {
       while($row=$result->fetch_assoc())
       {
-        $name=$row['nome'];
+        $_SESSION["name"] = $row['nome'];
       } 
      
   }
@@ -66,17 +71,25 @@ function login($u,$p,$conn)
   <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-  <div class="banner">
-    <div class="logo-container">
-      <img class="logo" src="imgsito/logo.png">
-    </div>
-    <div>
-      <h2>Bonsai Store</h2>
-    </div>  
-    <div class="banner-links"> 
-    <h4> Bentornato  <?php print $name //DA FIXARE?> </h4> 
-    </div>
-  </div>
+<ul>
+    <li><a  href="index.html"> <img class="logo" src="imgsito/logo.png"></a></li>
+    <li><h2 class="title">Bonsai Store</h2></li>
+    
+    <li class="acc_button"><a class="normalbutton" href="registrati.html">Registrati</a></li>
+    <li class="acc_button"><a class="normalbutton" href="login.html">Accedi</a></li>
+    <li class="acc_button"><h4> Bentornato  <?php print $_SESSION["name"]?> </h4> </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </li>
+  </ul>
+
+      
+
   <div class="table-container">
     <table>
       <tbody>

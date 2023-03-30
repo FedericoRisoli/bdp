@@ -2,21 +2,11 @@ html{
     font-family:verdana;
     background-color:#343E3D;
   } 
-  .banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #C6EBBE;
-    border-radius:25px;
-    text-align:center;
-  }
+
   .logo {
     max-height: 80px;    
   }
-  .banner-links  {
-    margin-left: 10px;
-  }
+
   .normalbutton:link, .normalbutton:visited {
       background-color:#607466;
       border-radius:15px;
@@ -24,12 +14,14 @@ html{
       padding: 14px 25px;
       text-align: center;
       text-decoration: none;
-      display: inline-block;
+      display:flex;
       transition-duration: 0.4s;
+      margin-top:30px;
     }
     
   .normalbutton:hover, .normalbutton:active {
       background-color: #FCA311;
+      margin-top:30px;
   }
   
   .table-container {
@@ -44,6 +36,9 @@ html{
     border-radius:10px;
     overflow: hidden;
       
+  }
+  .title{
+    margin-top: 40px;
   }
   
   td,th{
@@ -113,4 +108,64 @@ html{
     width: 400px;
     margin-top: 20px;
   }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #C6EBBE;
+    border-radius: 500px;
+  }
   
+  li {
+    float: left;
+  }
+  
+  li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover, .dropdown:hover .dropbtn {
+    background-color: #FCA311;
+ 
+  }
+  
+  li.dropdown {
+    display: inline-block;
+    margin-top:30px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .acc_button{
+   float: right;
+   margin-right: 20px;
+  }
+  .saluto{
+    float:right;
+    margin-right: 20px;
+  }
