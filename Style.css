@@ -38,7 +38,9 @@ html{
       
   }
   .title{
-    margin-top: 40px;
+    
+    font-family: Brush Script MT;
+    font-size: 37px;
   }
   
   td,th{
@@ -137,6 +139,8 @@ html{
   li.dropdown {
     display: inline-block;
     margin-top:30px;
+    float: right;
+    margin-right:50px;
   }
   
   .dropdown-content {
@@ -167,5 +171,11 @@ html{
   }
   .saluto{
     float:right;
+    margin-top: 20px;
     margin-right: 20px;
+  }
+  .error{
+    color: rgb(255, 119, 119);
+   
+    text-align: center;
   }

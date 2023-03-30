@@ -57,9 +57,16 @@ function login($u,$p,$conn)
       } 
      
   }
-  else
+  else if((empty($u) || empty($p)|| ($u==""||$p==""))){
+    $_SESSION["login_failed"] = true; 
+    header("location: login.php"); //questo è un redirect
+    exit; 
+  }
+  else 
   {
-  header("location: index.html"); //questo è un redirect
+    $_SESSION["login_failed"] = true; 
+    header("location: login.php"); //questo è un redirect
+    exit; 
   }
   
 }
@@ -72,12 +79,11 @@ function login($u,$p,$conn)
 </head>
 <body>
 <ul>
-    <li><a  href="index.html"> <img class="logo" src="imgsito/logo.png"></a></li>
+    <li><a  href="logged.php"> <img class="logo" src="imgsito/logo.png"></a></li>
     <li><h2 class="title">Bonsai Store</h2></li>
     
-    <li class="acc_button"><a class="normalbutton" href="registrati.html">Registrati</a></li>
-    <li class="acc_button"><a class="normalbutton" href="login.html">Accedi</a></li>
-    <li class="acc_button"><h4> Bentornato  <?php print $_SESSION["name"]?> </h4> </li>
+    <li class="acc_button"><a class="normalbutton" href="index.html">Log Out</a></li>
+    <li class="saluto"><h4> Bentornato  <?php print $_SESSION["name"]?> </h4> </li>
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
       <div class="dropdown-content">
