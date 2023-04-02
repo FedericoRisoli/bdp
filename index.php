@@ -22,10 +22,10 @@ $result4=mysqli_query($conn,$sql4);
 </head>
 <body>
 <ul>
-    <li><a  href="logged.php"> <img class="logo" src="imgsito/logo.png"></a></li>
+    <li><a  href="index.php"> <img class="logo" src="imgsito/logo.png"></a></li>
     <li><h2 class="title">Bonsai Store</h2></li>
-    
-    <li class="acc_button"><a class="normalbutton" href="index.html">Log Out</a></li>
+    <li class="acc_button"><a class="normalbutton" href="registrati.html">Registrati</a></li>
+    <li class="acc_button"><a class="normalbutton" href="login.php">Accedi</a></li>
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
       <div class="dropdown-content">
