@@ -24,6 +24,7 @@ $result4=mysqli_query($conn,$sql4);
 <ul>
     <li><a  href="index.php"> <img class="logo" src="imgsito/logo.png"></a></li>
     <li><h2 class="title">Bonsai Store</h2></li>
+    
     <li class="acc_button"><a class="normalbutton" href="registrati.html">Registrati</a></li>
     <li class="acc_button"><a class="normalbutton" href="login.php">Accedi</a></li>
     <li class="dropdown">
@@ -34,6 +35,7 @@ $result4=mysqli_query($conn,$sql4);
         <a href="#">Link 3</a>
       </div>
     </li>
+    <li><input type="text" class="searchbar" name="search" placeholder="Search.."></li>
   </ul>
 
       

@@ -82,7 +82,7 @@ function login($u,$p,$conn)
     <li><a  href="logged.php"> <img class="logo" src="imgsito/logo.png"></a></li>
     <li><h2 class="title">Bonsai Store</h2></li>
     
-    <li class="acc_button"><a class="normalbutton" href="index.html">Log Out</a></li>
+    <li class="acc_button"><a class="normalbutton" href="index.php">Log Out</a></li>
     <li class="saluto"><h4> Bentornato  <?php print $_SESSION["name"]?> </h4> </li>
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Dropdown</a>

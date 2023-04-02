@@ -11,7 +11,7 @@
 </head>
 <body>
   <ul>
-    <li><a  href="index.html"> <img class="logo" src="imgsito/logo.png"></a></li>
+    <li><a  href="index.php"> <img class="logo" src="imgsito/logo.png"></a></li>
     <li><h2 class="title">Bonsai Store</h2></li>
     <li class="acc_button"><a class="normalbutton" href="registrati.html">Registrati</a></li>
   </ul>

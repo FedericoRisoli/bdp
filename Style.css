@@ -133,14 +133,22 @@ html{
   
   li a:hover, .dropdown:hover .dropbtn {
     background-color: #FCA311;
+    border-radius:15px;
  
   }
   
   li.dropdown {
+    background-color:#607466;
+    border-radius:15px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display:flex;
+    transition-duration: 0.4s;
     display: inline-block;
     margin-top:30px;
     float: right;
-    margin-right:50px;
+    margin-right:25px;
   }
   
   .dropdown-content {
@@ -178,4 +186,18 @@ html{
     color: rgb(255, 119, 119);
    
     text-align: center;
+  }
+  .searchbar {
+
+    margin-top:40px;
+    margin-left: 50px;
+    width: 300px;
+    height: 30px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  .searchbar:focus {
+    width: 200%;
   }
