@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 04, 2023 alle 09:58
+-- Creato il: Apr 04, 2023 alle 10:39
 -- Versione del server: 10.4.27-MariaDB
 -- Versione PHP: 7.4.33
 
@@ -74,15 +74,6 @@ CREATE TABLE `utenti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dump dei dati per la tabella `utenti`
---
-
-INSERT INTO `utenti` (`username`, `password`, `nome`, `cognome`, `datanascita`, `indirizzo`) VALUES
-('admin', 'admin', 'amministratore', 'amministratore', '2000-04-29', 'via Campus 1 PR'),
-('a', 'a', 'a', 'a', '2013-04-03', 'a'),
-('elia2904', 'e', 'elia', 'candida', '2000-04-29', 'via campus 2 PR');
-
---
 -- Indici per le tabelle scaricate
 --
 
@@ -91,7 +82,8 @@ INSERT INTO `utenti` (`username`, `password`, `nome`, `cognome`, `datanascita`, 
 --
 ALTER TABLE `acquisti`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `foreignbonsai` (`idprod`);
+  ADD KEY `foreignbonsai` (`idprod`),
+  ADD KEY `usr` (`usr`);
 
 --
 -- Indici per le tabelle `prodotti`
@@ -103,7 +95,7 @@ ALTER TABLE `prodotti`
 -- Indici per le tabelle `utenti`
 --
 ALTER TABLE `utenti`
-  ADD UNIQUE KEY `username` (`username`) USING HASH;
+  ADD PRIMARY KEY (`username`);
 
 --
 -- AUTO_INCREMENT per le tabelle scaricate
@@ -123,6 +115,7 @@ ALTER TABLE `prodotti`
 -- Limiti per la tabella `acquisti`
 --
 ALTER TABLE `acquisti`
+  ADD CONSTRAINT `acquisti_ibfk_1` FOREIGN KEY (`usr`) REFERENCES `utenti` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `foreignbonsai` FOREIGN KEY (`idprod`) REFERENCES `prodotti` (`id`);
 COMMIT;
 
