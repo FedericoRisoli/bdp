@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 06, 2023 alle 17:14
+-- Creato il: Apr 04, 2023 alle 09:58
 -- Versione del server: 10.4.27-MariaDB
--- Versione PHP: 8.2.0
+-- Versione PHP: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `acquisti`
+--
+
+CREATE TABLE `acquisti` (
+  `id` int(11) NOT NULL,
+  `usr` text NOT NULL,
+  `idprod` int(11) NOT NULL,
+  `data` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Struttura della tabella `prodotti`
 --
 
@@ -31,18 +44,19 @@ CREATE TABLE `prodotti` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `prezzo` float NOT NULL,
-  `nomeimg` varchar(10) NOT NULL
+  `nomeimg` varchar(10) NOT NULL,
+  `promo` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `prodotti`
 --
 
-INSERT INTO `prodotti` (`id`, `nome`, `prezzo`, `nomeimg`) VALUES
-(1, 'Olmo Bonsai', 15, 'b1.jpg'),
-(2, 'Ficus Bonsai', 25, 'b2.jpg'),
-(3, 'Olivo Bonsai', 35, 'b3.jpg'),
-(4, 'Quercia Bonsai', 120, 'b4.jpg');
+INSERT INTO `prodotti` (`id`, `nome`, `prezzo`, `nomeimg`, `promo`) VALUES
+(1, 'Olmo Bonsai', 15, 'b1.jpg', 0),
+(2, 'Ficus Bonsai', 25, 'b2.jpg', 1),
+(3, 'Olivo Bonsai', 35, 'b3.jpg', 1),
+(4, 'Quercia Bonsai', 120, 'b4.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -51,27 +65,33 @@ INSERT INTO `prodotti` (`id`, `nome`, `prezzo`, `nomeimg`) VALUES
 --
 
 CREATE TABLE `utenti` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  `cognome` varchar(50) NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `nome` text NOT NULL,
+  `cognome` text NOT NULL,
   `datanascita` date NOT NULL,
-  `indirizzo` varchar(50) NOT NULL,
-  `ruolo` varchar(3) NOT NULL
+  `indirizzo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `utenti`
 --
 
-INSERT INTO `utenti` (`id`, `username`, `password`, `nome`, `cognome`, `datanascita`, `indirizzo`, `ruolo`) VALUES
-(1, 'admin', 'admin', 'amministratore', 'adm', '1999-05-08', 'Via Campus 1', 'adm'),
-(2, 'fede', 'fede', 'federico', 'risoli', '1999-05-08', 'Via Campus 2', 'cli');
+INSERT INTO `utenti` (`username`, `password`, `nome`, `cognome`, `datanascita`, `indirizzo`) VALUES
+('admin', 'admin', 'amministratore', 'amministratore', '2000-04-29', 'via Campus 1 PR'),
+('a', 'a', 'a', 'a', '2013-04-03', 'a'),
+('elia2904', 'e', 'elia', 'candida', '2000-04-29', 'via campus 2 PR');
 
 --
 -- Indici per le tabelle scaricate
 --
+
+--
+-- Indici per le tabelle `acquisti`
+--
+ALTER TABLE `acquisti`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `foreignbonsai` (`idprod`);
 
 --
 -- Indici per le tabelle `prodotti`
@@ -83,7 +103,7 @@ ALTER TABLE `prodotti`
 -- Indici per le tabelle `utenti`
 --
 ALTER TABLE `utenti`
-  ADD PRIMARY KEY (`id`);
+  ADD UNIQUE KEY `username` (`username`) USING HASH;
 
 --
 -- AUTO_INCREMENT per le tabelle scaricate
@@ -96,10 +116,14 @@ ALTER TABLE `prodotti`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT per la tabella `utenti`
+-- Limiti per le tabelle scaricate
 --
-ALTER TABLE `utenti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Limiti per la tabella `acquisti`
+--
+ALTER TABLE `acquisti`
+  ADD CONSTRAINT `foreignbonsai` FOREIGN KEY (`idprod`) REFERENCES `prodotti` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
