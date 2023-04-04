@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `acquisti` (
   `id` int(11) NOT NULL,
-  `usr` text NOT NULL,
+  `usr` varchar(50) NOT NULL,
   `idprod` int(11) NOT NULL,
   `data` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -65,7 +65,7 @@ INSERT INTO `prodotti` (`id`, `nome`, `prezzo`, `nomeimg`, `promo`) VALUES
 --
 
 CREATE TABLE `utenti` (
-  `username` text NOT NULL,
+  `username` varchar(50) NOT NULL,
   `password` text NOT NULL,
   `nome` text NOT NULL,
   `cognome` text NOT NULL,
