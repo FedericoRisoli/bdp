@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <script>
   function checkForm() 
   {
@@ -27,7 +30,6 @@
     return true;
 
   }
-
 
 </script>
 <html lang="it">

@@ -18,7 +18,7 @@ if(isset($_POST["chekoperation"]))
     $un= $_POST["un"];      //username
     $pss= $_POST["pw"];     //password
     $sqlregistration="INSERT INTO `utenti`(`username`, `password`, `nome`, `cognome`, `datanascita`, `indirizzo`) VALUES ('$un','$pss','$n','$sn','$date','$add')" ;
-      
+
     //registrazione andata a buon fine?
     if ($conn->query($sqlregistration) === TRUE) 
       {
@@ -27,9 +27,16 @@ if(isset($_POST["chekoperation"]))
       } 
       else
       {
-        echo "<script>alert('Login NON Avvenuto.');</script>";
-        echo "Error inserting record: " . $conn->error;
-        //header('Location: registrati.html');
+        //controllo se l'errore è duplicate entry, ovvero se la chiave primaria (username) è già presente
+        $uguali = substr_compare($conn->error, "Duplicate entry ", 0, 16);
+        if ( $uguali == 0 ){
+          echo "<script>alert('Username già in uso , sceglierne uno differente');</script>";
+        }
+        else{
+          echo "<script>alert('Error inserting record:  . $conn->error');</script>";
+        }
+        echo file_get_contents("registrati.php");
+        exit(0);
       }
 
     }
@@ -56,10 +63,10 @@ function login($u,$p,$conn)
   $result=mysqli_query($conn,$sql);
   if(mysqli_num_rows($result)>0 )  //questo è 1 modo per vedere se ci sono righe
   {
-      while($row=$result->fetch_assoc())
-      {
-        $_SESSION["name"] = $row['nome'];
-      } 
+    while($row=$result->fetch_assoc())
+    {
+      $_SESSION["name"] = $row['nome'];
+    } 
      
   }
   else if((empty($u) || empty($p)|| ($u==""||$p==""))){
