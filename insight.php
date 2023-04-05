@@ -1,6 +1,6 @@
 <?php
 $conn=new mysqli('localhost','root','','bonsaistore');
-session_start();
+
 if($conn->connect_error)
 {
     die('connessione fallita' .$conn->connect_error);
