@@ -96,6 +96,7 @@ function login($u,$p,$conn)
     
     <li class="acc_button"><a class="normalbutton" href="index.php">Log Out</a></li>
     <li class="saluto"><h4> Bentornato  <?php print $_SESSION["name"]?> </h4> </li>
+    
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
       <div class="dropdown-content">
@@ -104,6 +105,11 @@ function login($u,$p,$conn)
         <a href="#">Link 3</a>
       </div>
     </li>
+    <?php
+    if($_SESSION["name"]=="admin"){
+      print('<li class="acc_button"><a class="normalbutton" href="insight.php">Insight</a></li>');
+    }
+    ?>
   </ul>
 
       
