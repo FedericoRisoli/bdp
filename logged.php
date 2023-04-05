@@ -108,6 +108,7 @@ function login($u,$p,$conn)
     <?php
     if($_SESSION["name"]=="admin"){
       print('<li class="acc_button"><a class="normalbutton" href="insight.php">Insight</a></li>');
+      print('<li class="acc_button"><a class="normalbutton" href="productmanager.php">Gestisci Prodotti</a></li>');
     }
     ?>
   </ul>
