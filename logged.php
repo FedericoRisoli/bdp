@@ -11,20 +11,25 @@ if(isset($_POST["chekoperation"]))
   $operation=$_POST["chekoperation"];
   if($operation=="reg")
     {
-    $n = $_POST["n"];
-    $sn= $_POST["sn"];
-    $add= $_POST["addr"];
-    $date= $_POST["brt"];
-    $un= $_POST["un"];
-    $pss= $_POST["pw"];
-    $sqlregistration="INSERT INTO `utenti`(`id`, `username`, `password`, `nome`, `cognome`, `datanascita`, `indirizzo`, `ruolo`) VALUES ('','$un','$pss','$n','$sn','$date','$add','cli')" ;
-      if ($conn->query($sqlregistration) === TRUE) 
+    $n = $_POST["n"];     //nome
+    $sn= $_POST["sn"];     //surname
+    $add= $_POST["addr"];  //indirizzo
+    $date= $_POST["brt"];   //nascita
+    $un= $_POST["un"];      //username
+    $pss= $_POST["pw"];     //password
+    $sqlregistration="INSERT INTO `utenti`(`username`, `password`, `nome`, `cognome`, `datanascita`, `indirizzo`) VALUES ('$un','$pss','$n','$sn','$date','$add')" ;
+      
+    //registrazione andata a buon fine?
+    if ($conn->query($sqlregistration) === TRUE) 
       {
+        echo "<script>alert('Login Avvenuto.');</script>";
         login($un,$pss,$conn);
       } 
       else
       {
+        echo "<script>alert('Login NON Avvenuto.');</script>";
         echo "Error inserting record: " . $conn->error;
+        //header('Location: registrati.html');
       }
 
     }
