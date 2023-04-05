@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 04, 2023 alle 10:39
+-- Creato il: Apr 05, 2023 alle 11:47
 -- Versione del server: 10.4.27-MariaDB
--- Versione PHP: 7.4.33
+-- Versione PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,6 +33,18 @@ CREATE TABLE `acquisti` (
   `idprod` int(11) NOT NULL,
   `data` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dump dei dati per la tabella `acquisti`
+--
+
+INSERT INTO `acquisti` (`id`, `usr`, `idprod`, `data`) VALUES
+(1, 'a', 1, '2023-04-04'),
+(2, 'a', 1, '2023-04-04'),
+(3, 'b', 2, '2023-04-04'),
+(4, 'b', 1, '2023-04-04'),
+(5, 'a', 4, '2023-04-04'),
+(6, 'b', 2, '2023-04-04');
 
 -- --------------------------------------------------------
 
@@ -74,6 +86,15 @@ CREATE TABLE `utenti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dump dei dati per la tabella `utenti`
+--
+
+INSERT INTO `utenti` (`username`, `password`, `nome`, `cognome`, `datanascita`, `indirizzo`) VALUES
+('a', 'a', 'a', 'a', '2003-04-10', 'a'),
+('admin', 'admin', 'admin', 'amministratore', '1993-04-15', 'Via Campus 1'),
+('b', 'b', 'b', 'b', '2003-04-01', 'b');
+
+--
 -- Indici per le tabelle scaricate
 --
 
@@ -100,6 +121,12 @@ ALTER TABLE `utenti`
 --
 -- AUTO_INCREMENT per le tabelle scaricate
 --
+
+--
+-- AUTO_INCREMENT per la tabella `acquisti`
+--
+ALTER TABLE `acquisti`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT per la tabella `prodotti`
