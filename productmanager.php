@@ -5,47 +5,50 @@ if($conn->connect_error)
 {
     die('connessione fallita' .$conn->connect_error);
 }
+if(isset($_POST["chekoperation"])) 
+  {
+  $operation=$_POST["chekoperation"];
+  if($operation=="add")
+    {
+    $n = $_POST["n_prod"];     //nome  prodotto
+    $p= $_POST["price"];     //prezzo
+    $n_img= $_POST["n_img"];  //nome immagine
+    if(isset($_POST['promo'])) {
+      $promo = 1;
+   } else {
+      $promo = 0;
+   }
+   
+    $sqlregistration="INSERT INTO `prodotti`(`nome`, `prezzo`, `nomeimg`, `promo`) VALUES ('$n','$p','$n_img','$promo')" ; //inserisco prodotto
 
+  
+    if ($conn->query($sqlregistration) === TRUE) 
+      {
+        echo "<script>alert('Prodotto aggiunto correttamente.');</script>";
+        header("location: logged.php"); //questo è un redirect
+        exit; 
+      } 
+      else
+      {
+        echo "<script>alert('Errore inserimento.');</script>";
+        header("location: add.html"); //questo è un redirect
+        exit; 
+      }
 
+    }
+  else if($operation=="mdf")
+  {
+    $name= $_POST["usr"];
+    $psw=$_POST["psw"];
+   
+  }
+  else if($operation=="rmv"){
+
+  }
+}
 ?>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <title>home</title>
-  <link rel="stylesheet" href="Style.css">
-</head>
+<html>
 <body>
-<ul>
-    <li><a  href="logged.php"> <img class="logo" src="imgsito/logo.png"></a></li>
-    <li><h2 class="title">Bonsai Store</h2></li>
-    <li class="acc_button"><a class="normalbutton" href="index.php">Log Out</a></li>
-    <li class="acc_button"><a class="normalbutton" href="logged.php">Indietro</a></li>
-    </li>
-</ul>
-<div>
-<form class="lform" name="f" method="POST" action="productmanager.php">
-<h3 class="normal-subtitle">Aggiungi Prodotto</h3>
-      <label>Nome Prodotto:</label>
-      <input class="textfield" type="text" name="prodname">
-   <br>
- 
-      <label>Prezzo:</label>
-      <input class="textfield" type="text" name="price">
-      <br>
- 
-    <label>Nome immagine:</label>
-    <input class="textfield" type="text" name="imgname">
-
-    <p>
-     
-      <input class="sub" type="submit" value="Aggiungi Prodotto">
-    </p>
-  </form>
-
-
-</div>
-
-
 
 
 

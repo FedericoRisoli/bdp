@@ -205,10 +205,5 @@ html{
   .searchbar:focus {
     width: 200%;
   }
-  .i_td{
-    border: none;
-    text-align: center;
-    background-color:#607466;
-    color:#FFDDD2;
-  }
+
   
