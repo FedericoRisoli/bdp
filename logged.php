@@ -167,5 +167,18 @@ function login($u,$p,$conn)
       </tbody>
     </table>
   </div>
+  <form class="lform" name="form" method="POST" action="pagamento.php">
+    <H4 class=titolo_prod>Quale Bonsai desideri?</H4>
+    <SELECT name="bonsai">
+    <?php
+      mysqli_data_seek($result2, 0); 
+      foreach ($result2 as $row) {
+        echo "<option value=".$row['id'].">" . $row['nome'] . "</option>";
+      }
+            ?>
+    </SELECT>
+    <BR>
+    <input class="sub" type="submit" value="Compra">
+  </form>
 </body>
 </html>
