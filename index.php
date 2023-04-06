@@ -24,14 +24,6 @@ $result2=mysqli_query($conn,$sql2);//questi eseguono le query
     
     <li class="acc_button"><a class="normalbutton" href="registrati.php">Registrati</a></li>
     <li class="acc_button"><a class="normalbutton" href="login.php">Accedi</a></li>
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-    </li>
     <li><input type="text" class="searchbar" name="search" placeholder="Search.."></li>
   </ul>
 
