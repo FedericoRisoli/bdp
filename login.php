@@ -16,13 +16,20 @@
     <li class="acc_button"><a class="normalbutton" href="registrati.php">Registrati</a></li>
   </ul>
     <form class="lform" name="f" method="POST" action="logged.php">
-      
-        <label>Username:</label>
-        <input class="textfield" type="text" name="usr">
-     <br>
-   
-        <label>Password:</label>
-        <input class="textfield" type="password" name="psw">
+  <table >
+  <tbody>
+  <tr>
+    <td class="i_td"><label>Username:</label></td>
+    <td class="i_td"><input class="textfield" type="text" name="usr"></td>
+  </tr>
+
+
+  <tr>
+    <td class="i_td"><label>Password:</label></td>
+    <td class="i_td"><input class="textfield" type="password" name="psw"></td>
+  </tr>
+</tbody>
+</table>
 
       <p>
         <input type="hidden" name="chekoperation" value="login">
