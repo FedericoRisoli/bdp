@@ -98,11 +98,11 @@ function login($u,$p,$conn)
     <li class="saluto"><h4> Bentornato  <?php print $_SESSION["name"]?> </h4> </li>
     
     <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+      <a href="javascript:void(0)" class="dropbtn">Gestisci prodotti</a>
       <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a href="add.html">Aggiungi Prodotto</a>
+        <a href="modify.html">Modifica Prodotto</a>
+        <a href="remove.html">Rimuovi Prodotto</a>
       </div>
     </li>
     <?php
