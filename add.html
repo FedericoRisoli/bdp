@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Bonsai Store</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <ul>
+    <li><a  href="index.php"> <img class="logo" src="imgsito/logo.png"></a></li>
+    <li><h2 class="title">Bonsai Store</h2></li>
+    <li class="acc_button"><a class="normalbutton" href="logged.php">Indietro</a></li>
+    <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Gestisci prodotti</a>
+        <div class="dropdown-content">
+          <a href="add.html">Aggiungi Prodotto</a>
+          <a href="modify.html">Modifica Prodotto</a>
+          <a href="remove.html">Rimuovi Prodotto</a>
+        </div>
+      </li>
+  </ul>
+    <form class="lform" name="f" method="POST" action="productmanager.php">
+      
+        <label class="lab">Nome Prodotto:</label>
+        <input class="textfield" type="text" name="n_prod">
+     <br>
+   
+        <label>Prezzo:</label>
+        <input class="textfield" type="text" name="price">
+    <br>
+   
+        <label>nomeimg:</label>
+        <input class="textfield" type="text" name="n_img">
+    <br>
+   
+        <label>Promo:</label>
+        <input class="textfield" type="text" name="n_img">
+
+      <p>
+        <input type="hidden" name="chekoperation" value="add">
+        <input class="sub" type="submit" value="Aggiungi Prodotto">
+      </p>
+    </form>  
+</body>
+</html>
