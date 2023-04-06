@@ -4,6 +4,25 @@
   <meta charset="UTF-8">
   <title>Bonsai Store</title>
   <link rel="stylesheet" href="Style.css">
+  <script>
+    function checkForm() 
+    {
+  
+      //prendo tutti i campi e controllo che siano non vuoti
+      var inputs = document.getElementsByTagName("input");
+      for (var i = 0; i < inputs.length; i++) {
+        //controllo senza caratteri bianchi (non blank)
+        if (inputs[i].value.trim() == "") {
+          alert("Tutti i campi sono obbligatori!");
+          return false;
+        }
+      }
+  
+      return true;
+  
+    }
+  
+  </script>
 </head>
 <body>
   <ul>
@@ -34,11 +53,11 @@
     <br>
    
         <label>Promo:</label>
-        <input class="textfield" type="text" name="n_img">
+        <input class="textfield" type="checkbox" name="promo">
 
       <p>
         <input type="hidden" name="chekoperation" value="add">
-        <input class="sub" type="submit" value="Aggiungi Prodotto">
+        <input class="sub" type="submit" value="Aggiungi" onsubmit="return checkForm()">
       </p>
     </form>  
 </body>
