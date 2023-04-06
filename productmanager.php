@@ -13,7 +13,11 @@ if(isset($_POST["chekoperation"]))
     $n = $_POST["n_prod"];     //nome  prodotto
     $p= $_POST["price"];     //prezzo
     $n_img= $_POST["n_img"];  //nome immagine
-    $promo= $_POST["promo"];   //promo
+    if(isset($_POST['promo'])) {
+      $promo = 1;
+   } else {
+      $promo = 0;
+   }
    
     $sqlregistration="INSERT INTO `prodotti`(`nome`, `prezzo`, `nomeimg`, `promo`) VALUES ('$n','$p','$n_img','$promo')" ; //inserisco prodotto
 
