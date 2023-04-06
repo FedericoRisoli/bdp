@@ -9,7 +9,7 @@ if(isset($_POST["chekoperation"]))
   {
   $operation=$_POST["chekoperation"];
   if($operation=="add")
-    {
+  {
     $n = $_POST["n_prod"];     //nome  prodotto
     $p= $_POST["price"];     //prezzo
     $n_img= $_POST["n_img"];  //nome immagine
@@ -35,18 +35,39 @@ if(isset($_POST["chekoperation"]))
         exit; 
       }
 
-    }
+  }
   else if($operation=="mdf")
   {
-    $name= $_POST["usr"];
-    $psw=$_POST["psw"];
    
-  }
-  else if($operation=="rmv"){
+      $id = $_POST["sel"];
+      $sql = "SELECT * FROM prodotti WHERE id = $id";
+      $result = mysqli_query($conn, $sql);
+      $row = mysqli_fetch_assoc($result);
+      $nome = isset($_POST["nome"]) ? $_POST["nome"] : $row["nome"];
+      $prezzo = isset($_POST["prezzo"]) ? $_POST["prezzo"] : $row["prezzo"];
+      $n_img = isset($_POST["n_img"]) ? $_POST["n_img"] : $row["n_img"];
+      if(isset($_POST['promo'])) {
+        $promo = 1;
+     } else {
+        $promo = 0;
+      
+      $sql = "UPDATE prodotti SET nome = '$nome', prezzo = $prezzo , nomeimg= '$n_img', promo='$promo' WHERE id = $id";
+      if (mysqli_query($conn, $sql)) {
+        echo "<script>alert('Prodotto aggiunto correttamente.');</script>";
+        header("location: logged.php"); //questo è un redirect
+        exit; 
+      } else {
+        echo "<script>alert('Errore inserimento.');</script>";
+        header("location: add.html"); //questo è un redirect
+        exit; 
+      }
 
+    }
   }
 }
-?>
+    ?>
+    
+   
 <html>
 <body>
 
