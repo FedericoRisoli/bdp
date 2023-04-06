@@ -48,14 +48,10 @@ if(isset($_POST["chekoperation"]))
   }
 }
 
-$sql2="SELECT nome FROM prodotti" ;
-$sql3="SELECT prezzo FROM prodotti" ;
-$sql4="SELECT nomeimg FROM prodotti" ;
+$sql2="SELECT nome, promo, prezzo, nomeimg FROM prodotti ORDER BY promo DESC" ;
 
 
-$result2=mysqli_query($conn,$sql2);//questi eseguono le query
-$result3=mysqli_query($conn,$sql3);
-$result4=mysqli_query($conn,$sql4);
+$result2=mysqli_query($conn,$sql2);//eseguo la query
 
 function login($u,$p,$conn)
 {
@@ -124,17 +120,24 @@ function login($u,$p,$conn)
           {
               while($row=$result2->fetch_assoc())
               {
-                  print("<td class=\"titolo_prod\">".$nprod=$row['nome']."</td>");
+                if ($row['promo']==1)
+                {
+                  print("<td class=\"titolo_prod\">".$row['nome']."<br>PROMO -10%</td>");
+                }
+                else{
+                  print("<td class=\"titolo_prod\">".$row['nome']."</td>");
+                }
               }   
           } 
           ?>
         </tr>
         <tr>
         <?php 
-          if($result4->num_rows>0) //questo è un modo alternativo per vedere se ci sono righe (scegli tu tanto è uguale)
+        mysqli_data_seek($result2, 0); 
+          if($result2->num_rows>0) //questo è un modo alternativo per vedere se ci sono righe (scegli tu tanto è uguale)
           { 
             //questa è la seconda riga della tabella che mostra tutte le immagini
-              while($row=$result4->fetch_assoc())
+              while($row=$result2->fetch_assoc())
               {
                   print"<td>"."<img class=\"prod-img\" src='imgsito/".$row['nomeimg']."'>"."</td>";
                  
@@ -144,11 +147,19 @@ function login($u,$p,$conn)
         </tr>
         <tr>
           <?php
-        if($result3->num_rows>0) //questa è la terza riga della tabella che mostra tutti i prezzi
+        mysqli_data_seek($result2, 0); 
+        if($result2->num_rows>0) //questa è la terza riga della tabella che mostra tutti i prezzi
           {
-              while($row=$result3->fetch_assoc())
+              while($row=$result2->fetch_assoc())
               {
-                  print("<td>".$pprod=$row['prezzo']." $"."</td>");
+                if($row['promo']==0)
+                {
+                  print("<td>".$row['prezzo']." $"."</td>");
+                }
+                else
+                {
+                  print("<td>".$row['prezzo']*0.9." $"."</td>");
+                }
               }
           }
           ?>
