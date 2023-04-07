@@ -73,7 +73,7 @@ html{
     margin: auto;
   }
   input{
-    margin-top: 20px;
+    
     border-radius: 5px;
     align-self: center;
     border: none;
@@ -205,5 +205,15 @@ html{
   .searchbar:focus {
     width: 200%;
   }
-
+  .invisible,.i_td{
+   border:none;
+  }
+  .addform{
+    
+      width: 350px;
+      margin-top: 20px;
+  
+      
+    }
+  
   

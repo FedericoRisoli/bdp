@@ -16,7 +16,7 @@
     <li class="acc_button"><a class="normalbutton" href="registrati.php">Registrati</a></li>
   </ul>
     <form class="lform" name="f" method="POST" action="logged.php">
-  <table>
+  <table class="invisible">
   <tbody>
   <tr>
     <td class="i_td"><label>Username:</label></td>

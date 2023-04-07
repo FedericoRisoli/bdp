@@ -49,17 +49,17 @@ session_start();
     <form onsubmit="return checkForm()" class ="tform" name="input" method="POST" action="logged.php">
       <table class="tform">
         <tr>
-            <td> <label>Nome: </label> <input class="textfield" type="text" name="n"></td>
-            <td> <label>Cognome: </label> <input class="textfield" type="text" name="sn"></td>
+            <td class="invisible"> <label>Nome: </label> <input class="textfield" type="text" name="n"></td>
+            <td class="invisible"> <label>Cognome: </label> <input class="textfield" type="text" name="sn"></td>
         </tr>
         <tr>
-            <td> <label>Indirizzo: </label><input class="textfield" type="text" name="addr"></td>
-            <td> <label>Data di nascita: </label> <input class="textfield" type="date" name="brt" value="2005-01-01"></td>
+            <td class="invisible"> <label>Indirizzo: </label><input class="textfield" type="text" name="addr"></td>
+            <td class="invisible"> <label>Data di nascita: </label> <input class="textfield" type="date" name="brt" value="2005-01-01"></td>
             
         </tr>
         <tr>
-            <td> <label>Username: </label><input class="textfield" type="text" name="un"></td>
-            <td> <label>Password: </label><input class="textfield" type="password" id="password" name="pw"></td>
+            <td class="invisible"> <label>Username: </label><input class="textfield" type="text" name="un"></td>
+            <td class="invisible"> <label>Password: </label><input class="textfield" type="password" id="password" name="pw"></td>
             <input type="hidden" name="chekoperation" value="reg">
         </tr>
       </table>

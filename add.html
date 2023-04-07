@@ -33,32 +33,36 @@
         <a href="javascript:void(0)" class="dropbtn">Gestisci prodotti</a>
         <div class="dropdown-content">
           <a href="add.html">Aggiungi Prodotto</a>
-          <a href="modify.html">Modifica Prodotto</a>
+          <a href="modify.php">Modifica Prodotto</a>
           <a href="remove.html">Rimuovi Prodotto</a>
         </div>
       </li>
   </ul>
-    <form class="lform" name="f" method="POST" action="productmanager.php"  onsubmit="return checkForm()">
-      
-        <label class="lab">Nome Prodotto:</label>
-        <input class="textfield" type="text" name="n_prod">
-     <br>
-   
-        <label>Prezzo:</label>
-        <input class="textfield" type="number" step="0.01" name="price">
-    <br>
-   
-        <label>nomeimg:</label>
-        <input class="textfield" type="text" name="n_img">
-    <br>
-   
-        <label>Promo:</label>
-        <input class="textfield" type="checkbox" name="promo">
-
-      <p>
+    <form class="addform" name="f" method="POST" action="productmanager.php"  onsubmit="return checkForm()">
+      <table>
+        <tr>
+        <td class="invisible"><label class="lab">Nome Prodotto:</label></td>
+        <td class="invisible"><input class="textfield" type="text" name="n_prod"></td>
+        </tr>
+        <tr>
+          <td class="invisible"><label>Prezzo:</label></td>
+          <td class="invisible"><input class="textfield" type="number" step="0.01" name="price"></td>
+        </tr>  
+        <tr>
+          <td class="invisible"><label>nomeimg:</label></td>
+          <td class="invisible"><input class="textfield" type="text" name="n_img"></td>
+        </tr>
+        <tr>
+          <td class="invisible"><label>Promo:</label></td>
+          <td class="invisible"><input class="textfield" type="checkbox" name="promo"></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="invisible">
         <input type="hidden" name="chekoperation" value="add">
         <input class="sub" type="submit" value="Aggiungi">
-      </p>
+      </td>
+      </tr>
+     </table>
     </form>  
 </body>
 </html>
