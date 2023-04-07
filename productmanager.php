@@ -53,15 +53,29 @@ if(isset($_POST["chekoperation"]))
       
       $sql = "UPDATE prodotti SET nome = '$nome', prezzo = $prezzo , nomeimg= '$n_img', promo='$promo' WHERE id = $id";
       if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('Prodotto aggiunto correttamente.');</script>";
+        echo "<script>alert('Prodotto Modificato Correttamente.');</script>";
         header("location: logged.php"); //questo è un redirect
         exit; 
       } else {
-        echo "<script>alert('Errore inserimento.');</script>";
+        echo "<script>alert('Errore odifica.');</script>";
         header("location: add.html"); //questo è un redirect
         exit; 
       }
 
+    }
+  }
+  else if($operation=="rmv")
+  {
+    $id = $_POST["sel"];
+    $remove_query="DELETE  FROM `prodotti` WHERE id=$id";
+    if (mysqli_query($conn, $remove_query)) {
+      echo "<script>alert('Prodotto Rimosso correttamente.');</script>";
+      header("location: logged.php"); //questo è un redirect
+      exit; 
+    } else {
+      echo "<script>alert('Errore Rimozione.');</script>";
+      header("location: add.html"); //questo è un redirect
+      exit; 
     }
   }
 }

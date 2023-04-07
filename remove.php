@@ -24,7 +24,7 @@ $result=mysqli_query($conn,$prodotti);
         <a href="javascript:void(0)" class="dropbtn">Gestisci prodotti</a>
         <div class="dropdown-content">
           <a href="add.html">Aggiungi Prodotto</a>
-          <a href="remove.php">Rimuovi Prodotto</a>
+          <a href="modify.php">Modifica Prodotto</a>
         </div>
       </li>
   </ul>
@@ -42,26 +42,10 @@ foreach ($result as $row) {
     </select>
     </td>
 </tr>
+
 <tr>
-    <td class="invisible"><label class="lab">Nome Prodotto:</label></td>
-    <td class="invisible"><input class="textfield" type="text" name="nome" value=""></td>
-</tr>        
-<tr>
-  
-  <td class="invisible"><label>Prezzo:</label></td>
-  <td class="invisible"><input class="textfield" type="number" step="0.01" name="prezzo" value="0"></td>
-<tr>
-   
-    <td class="invisible"><label>nomeimg:</label></td>
-    <td class="invisible"><input class="textfield" type="text" name="n_img" value=""></td>
-</tr>
-<tr>
-  <td class="invisible"> <label>Promo:</label></td>
-  <td class="invisible"><input class="textfield" type="checkbox" name="promo"></td>
-</tr>
-<tr>
-  <td class="invisible" colspan="2"><input type="hidden" name="chekoperation" value="mdf">
- <input class="sub" type="submit" value="Modifica"></td>
+  <td class="invisible" colspan="2"><input type="hidden" name="chekoperation" value="rmv">
+ <input class="sub" type="submit" value="Rimuovi"></td>
 </tr>
     </form>  
 </body>
