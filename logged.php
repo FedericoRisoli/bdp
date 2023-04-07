@@ -55,13 +55,14 @@ $result2=mysqli_query($conn,$sql2);//eseguo la query
 
 function login($u,$p,$conn)
 {
-  $sql="SELECT nome FROM utenti WHERE username LIKE '$u' AND password LIKE '$p'" ;
+  $sql="SELECT * FROM utenti WHERE username LIKE '$u' AND password LIKE '$p'" ;
   $result=mysqli_query($conn,$sql);
   if(mysqli_num_rows($result)>0 )  //questo è 1 modo per vedere se ci sono righe
   {
     while($row=$result->fetch_assoc())
     {
       $_SESSION["name"] = $row['nome'];
+      $_SESSION["usr"] = $row['username'];
     } 
      
   }
@@ -92,10 +93,9 @@ function login($u,$p,$conn)
     
     <li class="acc_button"><a class="normalbutton" href="index.php">Log Out</a></li>
     <li class="saluto"><h4> Bentornato  <?php print $_SESSION["name"]?> </h4> </li>
-    
-    
+    <li class="acc_button"><a class="normalbutton" href="myorder.php">I miei ordini</a></li>
     <?php
-    if($_SESSION["name"]=="admin"){
+    if($_SESSION["usr"]=="admin"){
       print('<li class="acc_button"><a class="normalbutton" href="insight.php">Insight</a></li>');
       print('<li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Gestisci prodotti</a>
