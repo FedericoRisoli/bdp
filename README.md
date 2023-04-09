@@ -21,8 +21,6 @@ Admin
         - Prodotto peggiore
         - prodotto con prezzo più alto
         - prodotto con prezzo inferiore
-        - (Grafico Vendite e Volumi) in periodi prefissati o selezionabili
-        - guadagno medio mensile
-        - guadagno per singolo mese
-        - a fine pagina report entrate - uscite sia globale che mensile
-        - [se vogliamo fare i fighi aggiungiamo previsione vendite]
+        - prezzo medio pagato dagli utenti
+        - guadagno totale da inizio anno
+
