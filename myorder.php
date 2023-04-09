@@ -5,8 +5,8 @@ if($conn->connect_error)
 {
     die('connessione fallita' .$conn->connect_error);
 }
-$myorder="SELECT a.`data`,p.`nome`, p.`prezzo` FROM acquisti as a INNER JOIN prodotti as p ON a.`idprod`=p.`id` INNER JOIN utenti as u ON a.`usr`=u.`username` WHERE a.`usr` LIKE '$_SESSION["usr"]';"
-
+$myorder="SELECT a.`data`,p.`nome`, p.`prezzo` FROM acquisti as a INNER JOIN prodotti as p ON a.`idprod`=p.`id` INNER JOIN utenti as u ON a.`usr`=u.`username` WHERE a.`usr` LIKE '".$_SESSION["usr"]."';";
+$result = mysqli_query($conn, $myorder);
 ?>
 <html lang="it">
 <head>
@@ -25,7 +25,18 @@ $myorder="SELECT a.`data`,p.`nome`, p.`prezzo` FROM acquisti as a INNER JOIN pro
     </li>
 </ul>
 <div class="table-container">
-
+  <?php
+echo "<table>";
+echo "<tr><th>Data</th><th>Nome prodotto</th><th>Prezzo</th></tr>";
+while ($row = mysqli_fetch_assoc($result)) {
+    echo "<tr>";
+    echo "<td class=\"i_td\">" . $row['data'] . "</td>";
+    echo "<td class=\"i_td\">" . $row['nome'] . "</td>";
+    echo "<td class=\"i_td\">" . $row['prezzo'] . "$</td>";
+    echo "</tr>";
+}
+echo "</table>";
+?>
   </div>
 
 
