@@ -35,21 +35,21 @@ if($conn->connect_error)
 
   <tr>
     <td class="i_td"><label>Numero Carta:</label></td>
-    <td class="i_td"><input class="textfield" type="number" name="numerocarta"  min="0"></td>
+    <td class="i_td"><input class="textfield" id="no-spinner" type="number" name="numerocarta" min="0"></td>
   </tr>
 
   <tr>
     <td class="i_td"><label>CVV:</label></td>
-    <td class="i_td"><input class="textfield" type="number" name="numerocarta"  min="0"></td>
+    <td class="i_td"><input class="textfield" id="no-spinner" type="number" name="numerocarta" min="0"></td>
   </tr>
 
   <tr>
     <td class="i_td"><label>Anno Scadenza:</label></td>
-    <td class="i_td"><input class="textfield" type="number" name="numerocarta"  min="0"></td>
+    <td class="i_td"><input class="textfield" type="number" name="numerocarta" min="0"></td>
   </tr>
   <tr>
     <td class="i_td"><label>Mese Scadenza:</label></td>
-    <td class="i_td"><input class="textfield" type="number" name="numerocarta"  min="0"></td>
+    <td class="i_td"><input class="textfield" type="number" name="numerocarta" min="0" ></td>
   </tr>
   <tr>
     <td class="i_td" colspan="2"><input class="sub" type="submit" value="Login"></td>

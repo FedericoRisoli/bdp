@@ -216,11 +216,9 @@ html{
       
     }
   
-/* Rimuovo le frecce da input number */    
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    
-    -webkit-appearance: none;
-    margin: 0;
+/* Rimuovo le frecce da input number */
+input[type=number]#no-spinner::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none; 
+ margin: 0; 
 }
-  
