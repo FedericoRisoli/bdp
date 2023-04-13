@@ -67,23 +67,20 @@ function check(){
     }
   }
 
-  /*let carta = document.getElementsByName("numerocarta")[0].value.toString();
-  let cvv = document.getElementsByName("CVV")[0].value.tostring();
-  alert(carta.lenght);
-  if (carta.lenght!=16)
-  {
-      alert("Numero Carta non valido");
-      return false;
-  }
-  if (cvv.lenght!=3)
-  {
-      alert("CVV non valido");
-      return false;
-  }*/
-
-
-  //alert("Il tuo ordine è stato registrato, otterrai il Bonsai in 3 giorni");
+  let num = document.getElementsByName("numerocarta")[0];
   
+  if (num.value.length != 16) {
+        alert("Numero Carta non valido");
+    }
+  let cvv = document.getElementsByName("CVV")[0];
+  
+  if (cvv.value.length != 3) {
+        alert("CVV non valido");
+        return false;
+  }
+
+  alert("Il tuo ordine è stato registrato, otterrai il Bonsai in 3 giorni");
+  return true;
 }
 </script>
 
@@ -107,6 +104,14 @@ function check(){
     <form onsubmit="return check()" name="input" method="POST">
     <table class="invisible">
   <tbody>
+  <tr>
+    <td class="i_td"><label>Prdodotto:</label></td>
+    <td class="i_td"><label>TEST</label></td>
+  </tr>
+  <tr>
+    <td class="i_td"><label>Prezzo:</label></td>
+    <td class="i_td"><label>TEST</label></td>
+  </tr>
   <tr>
     <td class="i_td"><label>Intestatario Carta:</label></td>
     <td class="i_td"><input class="textfield" type="text" name="intestatario"></td>
@@ -135,7 +140,7 @@ function check(){
     <td class="i_td"><input class="textfield" type="text" name="indirizzo" min="0" ></td>
   </tr>
   <tr>
-    <td class="i_td" colspan="2"><input class="sub" type="submit" value="Login"></td>
+    <td class="i_td" colspan="2"><input class="sub" type="submit" value="Compra"></td>
   </tr>
 </tbody>
 </table>
