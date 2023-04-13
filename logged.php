@@ -93,7 +93,7 @@ function login($u,$p,$conn)
     
     <li class="acc_button"><a class="normalbutton" href="index.php">Log Out</a></li>
     <li class="saluto"><h4> Bentornato  <?php print $_SESSION["name"]?> </h4> </li>
-    <li class="acc_button"><a class="normalbutton" href="myorder.php">I miei ordini</a></li>
+    
     <?php
     if($_SESSION["usr"]=="admin"){
       print('<li class="acc_button"><a class="normalbutton" href="insight.php">Insight</a></li>');
@@ -104,7 +104,11 @@ function login($u,$p,$conn)
         <a href="modify.php">Modifica Prodotto</a>
         <a href="remove.php">Rimuovi Prodotto</a>
       </div>
+      <li class="acc_button"><a class="normalbutton" href="order.php">Ordini</a></li>
     </li>');
+    }
+    else{
+      print('<li class="acc_button"><a class="normalbutton" href="myorder.php">i miei ordini</a></li>');
     }
     ?>
   </ul>
