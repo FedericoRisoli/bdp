@@ -46,8 +46,10 @@ session_start();
    
   </ul>
 
+  <br>
     <form onsubmit="return checkForm()" class ="tform" name="input" method="POST" action="logged.php">
       <table class="tform">
+      <br>
         <tr>
             <td class="invisible"> <label>Nome: </label> <input class="textfield" type="text" name="n"></td>
             <td class="invisible"> <label>Cognome: </label> <input class="textfield" type="text" name="sn"></td>
