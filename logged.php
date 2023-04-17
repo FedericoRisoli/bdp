@@ -46,9 +46,28 @@ if(isset($_POST["chekoperation"]))
     $psw=$_POST["psw"];
     login($name,$psw,$conn);
   }
+  else if($operation=="comprato"){
+    //id usr idprod, data
+    //PRENDERE ID DEL USR NON IL NOME
+    $name= $_SESSION["usr"];
+    $data = date("Y-m-d");
+    $prodotto = $_SESSION['idprod'];
+
+    $compro="INSERT INTO `acquisti` VALUES (, $name, $prodotto, $data)";
+    //eseguo la query
+    print $name;
+    print "\n".$prodotto;
+    print "\n".$data;
+    if(!mysqli_query($conn,$compro))
+    {
+      print "\nORDINE NON PROCESSATO PER FAVORE RIPROVARE";
+    }
+    
+
+  }
 }
 
-$sql2="SELECT nome, promo, prezzo, nomeimg FROM prodotti ORDER BY promo DESC" ;
+$sql2="SELECT id, nome, promo, prezzo, nomeimg FROM prodotti ORDER BY promo DESC" ;
 
 
 $result2=mysqli_query($conn,$sql2);//eseguo la query
