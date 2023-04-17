@@ -24,7 +24,7 @@ $result2=mysqli_query($conn,$sql2);//questi eseguono le query
     
     <li class="acc_button"><a class="normalbutton" href="registrati.php">Registrati</a></li>
     <li class="acc_button"><a class="normalbutton" href="login.php">Accedi</a></li>
-    <li><input type="text" class="searchbar" name="search" placeholder="Search.."></li>
+ 
   </ul>
 
       
