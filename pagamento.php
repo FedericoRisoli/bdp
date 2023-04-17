@@ -71,6 +71,7 @@ function check(){
   
   if (num.value.length != 16) {
         alert("Numero Carta non valido");
+        return false;
     }
   let cvv = document.getElementsByName("CVV")[0];
   
