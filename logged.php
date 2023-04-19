@@ -48,16 +48,12 @@ if(isset($_POST["chekoperation"]))
   }
   else if($operation=="comprato"){
     //id usr idprod, data
-    //PRENDERE ID DEL USR NON IL NOME
     $name= $_SESSION["usr"];
     $data = date("Y-m-d");
     $prodotto = $_SESSION['idprod'];
 
-    $compro="INSERT INTO `acquisti` VALUES (, $name, $prodotto, $data)";
+    $compro="INSERT INTO `acquisti`(`id`, `usr`, `idprod`, `data`) VALUES (null,'$name',$prodotto,'$data');";
     //eseguo la query
-    print $name;
-    print "\n".$prodotto;
-    print "\n".$data;
     if(!mysqli_query($conn,$compro))
     {
       print "\nORDINE NON PROCESSATO PER FAVORE RIPROVARE";
