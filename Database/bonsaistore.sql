@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 05, 2023 alle 11:47
+-- Creato il: Apr 19, 2023 alle 11:49
 -- Versione del server: 10.4.27-MariaDB
--- Versione PHP: 8.2.0
+-- Versione PHP: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,7 +44,8 @@ INSERT INTO `acquisti` (`id`, `usr`, `idprod`, `data`) VALUES
 (3, 'b', 2, '2023-04-04'),
 (4, 'b', 1, '2023-04-04'),
 (5, 'a', 4, '2023-04-04'),
-(6, 'b', 2, '2023-04-04');
+(6, 'b', 2, '2023-04-04'),
+(7, 'a', 1, '2023-04-19');
 
 -- --------------------------------------------------------
 
@@ -126,7 +127,7 @@ ALTER TABLE `utenti`
 -- AUTO_INCREMENT per la tabella `acquisti`
 --
 ALTER TABLE `acquisti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT per la tabella `prodotti`
