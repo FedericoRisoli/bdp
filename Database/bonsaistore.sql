@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 19, 2023 alle 11:49
+-- Creato il: Apr 20, 2023 alle 14:27
 -- Versione del server: 10.4.27-MariaDB
 -- Versione PHP: 7.4.33
 
@@ -31,21 +31,22 @@ CREATE TABLE `acquisti` (
   `id` int(11) NOT NULL,
   `usr` varchar(50) NOT NULL,
   `idprod` int(11) NOT NULL,
-  `data` date NOT NULL DEFAULT current_timestamp()
+  `data` date NOT NULL DEFAULT current_timestamp(),
+  `prezzo` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `acquisti`
 --
 
-INSERT INTO `acquisti` (`id`, `usr`, `idprod`, `data`) VALUES
-(1, 'a', 1, '2023-04-04'),
-(2, 'a', 1, '2023-04-04'),
-(3, 'b', 2, '2023-04-04'),
-(4, 'b', 1, '2023-04-04'),
-(5, 'a', 4, '2023-04-04'),
-(6, 'b', 2, '2023-04-04'),
-(7, 'a', 1, '2023-04-19');
+INSERT INTO `acquisti` (`id`, `usr`, `idprod`, `data`, `prezzo`) VALUES
+(1, 'a', 1, '2023-04-04', '15.00'),
+(2, 'a', 1, '2023-04-04', '14.00'),
+(3, 'b', 2, '2023-04-04', '22.00'),
+(4, 'b', 1, '2023-04-04', '12.50'),
+(5, 'a', 4, '2023-04-04', '120.00'),
+(6, 'b', 2, '2023-04-04', '22.00'),
+(7, 'a', 1, '2023-04-19', '12.50');
 
 -- --------------------------------------------------------
 
@@ -69,7 +70,8 @@ INSERT INTO `prodotti` (`id`, `nome`, `prezzo`, `nomeimg`, `promo`) VALUES
 (1, 'Olmo Bonsai', 15, 'b1.jpg', 0),
 (2, 'Ficus Bonsai', 25, 'b2.jpg', 1),
 (3, 'Olivo Bonsai', 35, 'b3.jpg', 1),
-(4, 'Quercia Bonsai', 120, 'b4.jpg', 0);
+(4, 'Quercia Bonsai', 120, 'b4.jpg', 0),
+(5, 'test', 0.33, 'test.png', 1);
 
 -- --------------------------------------------------------
 
@@ -133,7 +135,7 @@ ALTER TABLE `acquisti`
 -- AUTO_INCREMENT per la tabella `prodotti`
 --
 ALTER TABLE `prodotti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Limiti per le tabelle scaricate
