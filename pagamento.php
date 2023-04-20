@@ -120,7 +120,18 @@ function check(){
   </tr>
   <tr>
     <td class="i_td"><label>Prezzo:</label></td>
-    <td class="i_td"><label><?php print $row['prezzo']; ?> $</label></td>
+    <td class="i_td"><label><?php 
+    
+    if($row['promo']==0)
+                {
+                  print($row['prezzo']);
+                }
+                else
+                {
+                  print(round($row['prezzo']*0.9, 2));
+                }
+    
+    ?> $</label></td>
   </tr>
   <tr>
     <td class="i_td"><label>Intestatario Carta:</label></td>
