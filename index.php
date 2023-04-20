@@ -5,6 +5,11 @@ if($conn->connect_error)
     die('connessione fallita' .$conn->connect_error);
 }
 
+//reset sessione se ci sono precedenti sessioni(serve per logout più sicuro)
+session_start();
+session_destroy();
+
+
 function arrotonda_a_due_decimali($numero) {
   return round($numero, 2);
 }
