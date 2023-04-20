@@ -5,6 +5,10 @@ if($conn->connect_error)
     die('connessione fallita' .$conn->connect_error);
 }
 
+function arrotonda_a_due_decimali($numero) {
+  return round($numero, 2);
+}
+
 $sql2="SELECT nome, promo, prezzo, nomeimg FROM prodotti ORDER BY promo DESC" ;
 
 
@@ -75,7 +79,7 @@ $result2=mysqli_query($conn,$sql2);//questi eseguono le query
                 }
                 else
                 {
-                  print("<td>".$row['prezzo']*0.9." $"."</td>");
+                  print("<td>".round($row['prezzo']*0.9, 2)." $"."</td>");
                 }
 
               }

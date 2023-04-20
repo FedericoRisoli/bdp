@@ -177,7 +177,7 @@ function login($u,$p,$conn)
                 }
                 else
                 {
-                  print("<td>".$row['prezzo']*0.9." $"."</td>");
+                  print("<td>".round($row['prezzo']*0.9, 2)." $"."</td>");
                 }
               }
           }
