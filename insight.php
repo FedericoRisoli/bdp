@@ -92,7 +92,7 @@ $res_avg=mysqli_query($conn,$avg_pay);
           }
 //fine prezzo medio pagato da utente
 //inizio guadagno totale da inizio anno
-$total_income="SELECT SUM(p.prezzo) as total FROM prodotti p INNER JOIN acquisti a ON p.id = a.idprod WHERE a.data >= '2023-01-01';";
+$total_income="SELECT SUM(a.prezzo) as total FROM prodotti p INNER JOIN acquisti a ON p.id = a.idprod WHERE a.data >= '2023-01-01';";
 $res_tot=mysqli_query($conn,$total_income);
     if(mysqli_num_rows($res_avg)>0)  
           {
