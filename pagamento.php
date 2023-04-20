@@ -113,6 +113,18 @@ function check(){
     <form onsubmit="return check()" name="input" method="POST" action="logged.php">
     <table class="invisible">
     <input type="hidden" name="chekoperation" value="comprato">
+    <input type="hidden" name="prezzo" value=<?php 
+    
+    if($row['promo']==0)
+                {
+                  print($row['prezzo']);
+                }
+                else
+                {
+                  print(round($row['prezzo']*0.9, 2));
+                }
+    
+    ?>>
   <tbody>
   <tr>
     <td class="i_td"><label>Prdodotto:</label></td>
