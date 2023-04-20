@@ -5,7 +5,7 @@ if($conn->connect_error)
 {
     die('connessione fallita' .$conn->connect_error);
 }
-$myorder="SELECT a.`data`,u.`username`,p.`nome`, p.`prezzo` FROM acquisti as a INNER JOIN prodotti as p ON a.`idprod`=p.`id` INNER JOIN utenti as u ON a.`usr`=u.`username` ;";
+$myorder="SELECT a.`data`,u.`username`,p.`nome`, a.`prezzo` FROM acquisti as a INNER JOIN prodotti as p ON a.`idprod`=p.`id` INNER JOIN utenti as u ON a.`usr`=u.`username` ;";
 $result = mysqli_query($conn, $myorder);
 ?>
 <html lang="it">
