@@ -51,8 +51,9 @@ if(isset($_POST["chekoperation"]))
     $name= $_SESSION["usr"];
     $data = date("Y-m-d");
     $prodotto = $_SESSION['idprod'];
+    $prezzo = $_POST['prezzo'];
 
-    $compro="INSERT INTO `acquisti`(`id`, `usr`, `idprod`, `data`) VALUES (null,'$name',$prodotto,'$data');";
+    $compro="INSERT INTO `acquisti`(`id`, `usr`, `idprod`, `data`, `prezzo`) VALUES (null,'$name',$prodotto,'$data', $prezzo);";
     //eseguo la query
     if(!mysqli_query($conn,$compro))
     {
