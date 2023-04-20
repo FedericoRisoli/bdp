@@ -5,9 +5,9 @@ Sito per il progetto di Basi i dati e web e-commerce di bonsai
 
 ### Requirements
 
-Utenti
+Tutti gli Utenti
 
-- Utenti possono comprare piante selezionandole e aggiungendo la quantità attraverso un carrello
+- Utenti possono comprare piante selezionandole
 - gli utenti per comprare devono essere loggati altrimenti possono solo sfogliare il catalogo
 - utente può visualizzare i prodotti in promozione
 - utente può visualizzare storico ordini
