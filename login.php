@@ -15,7 +15,9 @@
     <li><h2 class="title">Bonsai Store</h2></li>
     <li class="acc_button"><a class="normalbutton" href="registrati.php">Registrati</a></li>
   </ul>
-    <form class="lform" name="f" method="POST" action="logged.php">
+  <br>
+  <div class="table-container">
+  <form name="f" method="POST" action="logged.php">
   <table class="invisible">
   <tbody>
   <tr>
@@ -28,14 +30,17 @@
     <td class="i_td"><label>Password:</label></td>
     <td class="i_td"><input class="textfield" type="password" name="psw"></td>
   </tr>
+  <tr>
+  <td class="i_td" colspan=2><input class="sub" type="submit" value="Login"></td>
+  </tr>
 </tbody>
 </table>
+</div>
 
       <p>
         <input type="hidden" name="chekoperation" value="login">
-        <input class="sub" type="submit" value="Login">
       </p>
-    </form>
+      </form>
     <?php 
   if(isset($_SESSION["login_failed"]) && $_SESSION["login_failed"] == true)
   {

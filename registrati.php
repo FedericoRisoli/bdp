@@ -47,8 +47,9 @@ session_start();
   </ul>
 
   <br>
-    <form onsubmit="return checkForm()" class ="tform" name="input" method="POST" action="logged.php">
-      <table class="tform">
+  <div class="table-container">
+    <form onsubmit="return checkForm()" name="input" method="POST" action="logged.php">
+      <table>
       <br>
         <tr>
             <td class="invisible"> <label>Nome: </label> <input class="textfield" type="text" name="n"></td>
@@ -70,5 +71,6 @@ session_start();
         <input class="sub" type="submit" value="Sign Up">
       </p>
     </form>
+  </div>
 </body>
 </html>
