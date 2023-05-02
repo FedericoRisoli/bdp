@@ -27,6 +27,20 @@ session_start();
       alert("La password deve avere almeno 6 caratteri e contenere un numero ed una lettera")
       return false;
     } 
+    // Controlla che la data inserita sia valida
+    var birthdate = new Date(document.getElementsByName("brt")[0].value);
+    var currentDate = new Date();
+    var minBirthdate = new Date();
+    minBirthdate.setFullYear(currentDate.getFullYear() - 16);
+
+    if (birthdate >= currentDate) {
+      alert("Inserire una data di nascita valida");
+      return false;
+    }
+    if (birthdate > minBirthdate) {
+      alert("Devi avere almeno 16 anni per registrarti");
+      return false;
+    }
     return true;
 
   }
