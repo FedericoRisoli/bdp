@@ -22,7 +22,7 @@ if(isset($_POST["chekoperation"]))
     //registrazione andata a buon fine?
     if ($conn->query($sqlregistration) === TRUE) 
       {
-        echo "<script>alert('Login Avvenuto.');</script>";
+        //echo "<script>alert('Login Avvenuto.');</script>";
         login($un,$pss,$conn);
       } 
       else
