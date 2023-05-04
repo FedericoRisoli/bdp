@@ -116,7 +116,7 @@ function login($u,$p,$conn)
       print('<li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Gestisci prodotti</a>
       <div class="dropdown-content">
-        <a href="add.html">Aggiungi Prodotto</a>
+        <a href="add.php">Aggiungi Prodotto</a>
         <a href="modify.php">Modifica Prodotto</a>
         <a href="remove.php">Rimuovi Prodotto</a>
       </div>
