@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+session_start();
 $conn=new mysqli('localhost','root','','bonsaistore');
 if($conn->connect_error)
 {
@@ -17,7 +18,7 @@ $result=mysqli_query($conn,$prodotti);
 </head>
 <body>
   <ul>
-    <li><a  href="index.php"> <img class="logo" src="imgsito/logo.png"></a></li>
+    <li><a  href="logged.php"> <img class="logo" src="imgsito/logo.png"></a></li>
     <li><h2 class="title">Bonsai Store</h2></li>
     <li class="acc_button"><a class="normalbutton" href="logged.php">Indietro</a></li>
     <li class="dropdown">

@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="it">
+<html>
 <head>
+<?php session_start();?>
   <meta charset="UTF-8">
   <title>Bonsai Store</title>
   <link rel="stylesheet" href="Style.css">
@@ -26,7 +26,7 @@
 </head>
 <body>
   <ul>
-    <li><a  href="index.php"> <img class="logo" src="imgsito/logo.png"></a></li>
+    <li><a  href="logged.php"> <img class="logo" src="imgsito/logo.png"></a></li>
     <li><h2 class="title">Bonsai Store</h2></li>
     <li class="acc_button"><a class="normalbutton" href="logged.php">Indietro</a></li>
     <li class="dropdown">
