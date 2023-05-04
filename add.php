@@ -37,7 +37,9 @@
         </div>
       </li>
   </ul>
-    <form class="addform" name="f" method="POST" action="productmanager.php"  onsubmit="return checkForm()">
+  <br>
+  <div class="table-container">
+    <form name="f" method="POST" action="productmanager.php"  onsubmit="return checkForm()">
       <table>
         <tr>
         <td class="invisible"><label class="lab">Nome Prodotto:</label></td>
@@ -63,5 +65,6 @@
       </tr>
      </table>
     </form>  
+  </div>
 </body>
 </html>
