@@ -29,7 +29,9 @@ $result=mysqli_query($conn,$prodotti);
         </div>
       </li>
   </ul>
-    <form class="addform" name="f" method="POST" action="productmanager.php" >
+  <br>
+  <div class="table-container">
+    <form  name="f" method="POST" action="productmanager.php" >
       <table>
         <tr>
         <td class="invisible"><label>Seleziona prodotto</label></td>
@@ -49,5 +51,6 @@ foreach ($result as $row) {
  <input class="sub" type="submit" value="Rimuovi"></td>
 </tr>
     </form>  
+</div>
 </body>
 </html>
