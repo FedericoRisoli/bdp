@@ -80,13 +80,13 @@ $res_chp=mysqli_query($conn,$more_chp);
           }
 //fine prodotto con prezzo minore
 //inizio prezzo medio pagato da utente
-$avg_pay="SELECT AVG(subquery.prezzo_medio) AS prezzo_medio_totale FROM (SELECT a.usr, AVG(p.prezzo) AS prezzo_medio FROM acquisti a JOIN prodotti p ON a.idprod = p.id GROUP BY a.usr) AS subquery";
+$avg_pay="SELECT AVG(prezzo) as prezzo_medio FROM acquisti";
 $res_avg=mysqli_query($conn,$avg_pay);
     if(mysqli_num_rows($res_avg)>0)  
           {
               while($row=$res_avg->fetch_assoc())
               {
-                $avg_price=$row["prezzo_medio_totale"]; //prende il prezzo medio pagato dagli utenti
+                $avg_price=$row["prezzo_medio"]; //prende il prezzo medio pagato dagli utenti
                
               }   
           }
