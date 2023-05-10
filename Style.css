@@ -38,7 +38,6 @@ html{
       
   }
   .title{
-    
     font-family: Brush Script MT;
     font-size: 37px;
   }
@@ -49,7 +48,6 @@ html{
     text-align: center;
     background-color:#607466;
     color:#FFDDD2;
-    
   }
   .titolo_prod{
     font-weight:bold;
@@ -73,11 +71,9 @@ html{
     margin: auto;
   }
   input{
-    
     border-radius: 5px;
     align-self: center;
     border: none;
-    
   }
   .sub{
     margin-bottom: 10px;
@@ -114,7 +110,7 @@ html{
   li {
     float: left;
   }
-  
+   /*Inizio dropdowm button nella banner in alto*/
   li a, .dropbtn {
     display: inline-block;
     color: white;
@@ -126,9 +122,8 @@ html{
   li a:hover, .dropdown:hover .dropbtn {
     background-color: #FCA311;
     border-radius:15px;
- 
   }
-  
+ 
   li.dropdown {
     background-color:#607466;
     border-radius:15px;
@@ -153,6 +148,7 @@ html{
   }
   
   .dropdown-content a {
+    
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -165,6 +161,7 @@ html{
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  /*fine dropdown */
   .acc_button{
    float: right;
    margin-right: 20px;
@@ -176,32 +173,15 @@ html{
   }
   .error{
     color: rgb(255, 119, 119);
-   
     text-align: center;
   }
-  .searchbar {
 
-    margin-top:40px;
-    margin-left: 50px;
-    width: 300px;
-    height: 30px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-  }
-  
-  /* When the input field gets focus, change its width to 100% */
-  .searchbar:focus {
-    width: 200%;
-  }
   .invisible,.i_td{
    border:none;
   }
   .addform{
-    
       width: 350px;
       margin-top: 20px;
-  
-      
     }
   
 /* Rimuovo le frecce da input number */
